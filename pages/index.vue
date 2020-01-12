@@ -15,7 +15,7 @@
       </div>
       <v-card>
         <v-card-title class="headline">
-          Welcome to the Vuetify + Nuxt.js template
+          {{ story.name }}
         </v-card-title>
         <v-card-text>
           <p>Vuetify is a progressive Material Design component framework for Vue.js. It was designed to empower developers to create amazing applications.</p>
@@ -87,6 +87,24 @@ export default {
   components: {
     Logo,
     VuetifyLogo
+  },
+
+  data () {
+    return { story: { content: {} } }
+  },
+
+  asyncData (context) {
+    // Check if we are in the editor mode
+    const version = context.query._storyblok || context.isDev ? 'draft' : 'published'
+
+    // Load the JSON from the API
+    return context.app.$storyapi.get(`cdn/stories/home`, {
+      version
+    }).then((res) => {
+      return res.data
+    }).catch((res) => {
+      context.error({ statusCode: res.response.status, message: res.response.data })
+    })
   }
 }
 </script>
