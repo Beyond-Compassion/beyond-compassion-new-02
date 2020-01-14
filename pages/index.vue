@@ -93,9 +93,15 @@ export default {
     return { story: { content: {} } }
   },
 
+  // NOTE: The result from asyncData will be merged with data.
   asyncData (context) {
     // Check if we are in the editor mode
     const version = context.query._storyblok || context.isDev ? 'draft' : 'published'
+
+    // eslint-disable-next-line no-console
+    console.log('context:')
+    // eslint-disable-next-line no-console
+    console.log(context)
 
     // Load the JSON from the API
     return context.app.$storyapi.get(`cdn/stories/home`, {

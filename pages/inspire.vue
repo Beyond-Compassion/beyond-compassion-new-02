@@ -17,3 +17,18 @@
     </v-flex>
   </v-layout>
 </template>
+
+<script>
+export default {
+  data () {
+    return { story: { content: {} } }
+  },
+
+  asyncData (context) {
+    // eslint-disable-next-line no-console
+    console.log('context:')
+    // eslint-disable-next-line no-console
+    console.log(context)
+  }
+}
+</script>
