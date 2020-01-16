@@ -24,6 +24,7 @@
         </v-list-item>
       </v-list>
     </v-navigation-drawer>
+
     <v-app-bar
       :clipped-left="clipped"
       fixed
@@ -57,11 +58,13 @@
         <v-icon>mdi-menu</v-icon>
       </v-btn>
     </v-app-bar>
+
     <v-content>
       <v-container>
         <nuxt />
       </v-container>
     </v-content>
+
     <v-navigation-drawer
       v-model="rightDrawer"
       :right="right"
@@ -79,6 +82,7 @@
         </v-list-item>
       </v-list>
     </v-navigation-drawer>
+
     <v-footer
       :fixed="fixed"
       app
@@ -89,6 +93,10 @@
 </template>
 
 <script>
+/* eslint-disable no-console */
+
+import { mapGetters } from 'vuex'
+
 export default {
   data () {
     return {
@@ -112,6 +120,10 @@ export default {
       rightDrawer: false,
       title: 'Vuetify.js'
     }
+  },
+
+  computed: {
+    ...mapGetters(['footer'])
   }
 }
 </script>

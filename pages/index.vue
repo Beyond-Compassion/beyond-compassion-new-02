@@ -66,10 +66,11 @@
         </v-card-text>
         <v-card-actions>
           <v-spacer />
+          <!-- nuxt
+            to="/inspire" -->
           <v-btn
+            @click="increment"
             color="primary"
-            nuxt
-            to="/inspire"
           >
             Continue
           </v-btn>
@@ -80,6 +81,8 @@
 </template>
 
 <script>
+/* eslint-disable no-console */
+import { mapState, mapMutations } from 'vuex'
 import Logo from '~/components/Logo.vue'
 import VuetifyLogo from '~/components/VuetifyLogo.vue'
 
@@ -90,27 +93,35 @@ export default {
   },
 
   data () {
-    return { story: { content: {} } }
+    return {
+      clipped: false,
+      drawer: false,
+      fixed: false,
+      items: [
+        {
+          icon: 'mdi-apps',
+          title: 'Welcome',
+          to: '/'
+        },
+        {
+          icon: 'mdi-chart-bubble',
+          title: 'Inspire',
+          to: '/inspire'
+        }
+      ],
+      miniVariant: false,
+      right: true,
+      rightDrawer: false,
+      title: 'Vuetify.js'
+    }
   },
 
-  // NOTE: The result from asyncData will be merged with data.
-  asyncData (context) {
-    // Check if we are in the editor mode
-    const version = context.query._storyblok || context.isDev ? 'draft' : 'published'
+  computed: {
+    ...mapState(['story'])
+  },
 
-    // eslint-disable-next-line no-console
-    console.log('context:')
-    // eslint-disable-next-line no-console
-    console.log(context)
-
-    // Load the JSON from the API
-    return context.app.$storyapi.get(`cdn/stories/home`, {
-      version
-    }).then((res) => {
-      return res.data
-    }).catch((res) => {
-      context.error({ statusCode: res.response.status, message: res.response.data })
-    })
+  methods: {
+    ...mapMutations(['increment'])
   }
 }
 </script>
