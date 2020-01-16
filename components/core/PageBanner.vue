@@ -21,7 +21,7 @@
             <v-fade-transition mode="out-in">
               <v-flex
                 :key="$route.path"
-                text-xs-center
+                text-center
               >
                 <h1
                   :class="titleClass"
@@ -43,6 +43,21 @@
 
 <script>
 export default {
+  props: {
+    title: {
+      type: String,
+      default: null
+    },
+    subTitle: {
+      type: String,
+      default: null
+    },
+    heroImage: {
+      type: String,
+      default: 'https://res.cloudinary.com/dscfugb4z/image/upload/v1579152598/Static/beyond-compassion/blank-hero-003_twpuku.jpg'
+    }
+  },
+
   data: () => ({
     isBooted: false
   }),
@@ -71,16 +86,16 @@ export default {
     },
     namespace () {
       return this.$route.name
-    },
-    title () {
-      return this.$t(`${this.namespace}.jumbotronTitle`)
-    },
-    subTitle () {
-      return this.$t(`${this.namespace}.jumbotronSubTitle`)
-    },
-    heroImage () {
-      return `/static/${this.namespace.toLowerCase()}-hero.jpg`
     }
+    // title () {
+    //   return this.$t(`${this.namespace}.jumbotronTitle`)
+    // },
+    // subTitle () {
+    //   return this.$t(`${this.namespace}.jumbotronSubTitle`)
+    // },
+    // heroImage () {
+    //   return `/static/${this.namespace.toLowerCase()}-hero.jpg`
+    // }
     // heroImage () {
     //   return `/static/shoes-003-BW.png`
     // }

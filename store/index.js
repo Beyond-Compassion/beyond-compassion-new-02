@@ -1,4 +1,7 @@
 /* eslint-disable no-console */
+
+import { pick } from 'ramda'
+
 export const state = () => ({
   counter: 0,
   story: null
@@ -10,7 +13,8 @@ export const mutations = {
   },
 
   setStory (state, story) {
-    console.log('setStory called')
+    console.log('story')
+    console.log(story.content.quoteBanner[0])
     state.story = story
   }
 }
@@ -18,8 +22,6 @@ export const mutations = {
 export const actions = {
   // NOTE: nuxtServerInit must return a promise according to docs
   nuxtServerInit ({ dispatch }, context) {
-    console.log('context:')
-    console.log(context)
     return dispatch('fetchStory', context)
   },
 
@@ -41,6 +43,23 @@ export const actions = {
 
 export const getters = {
   footer (state) {
-    return state.story.content.footer[0].reference.content.global[0]
+    return pick(
+      ['footerLinks', 'legalTop', 'legalBottom', 'email'],
+      state.story.content.footer[0].reference.content.global[0]
+    )
+  },
+
+  quoteBanner (state) {
+    return pick(
+      ['author', 'title', 'body'],
+      state.story.content.quoteBanner[0]
+    )
+  },
+
+  pageBanner (state) {
+    return pick(
+      ['subTitle', 'title', 'heroImage'],
+      state.story.content.pageBanner[0]
+    )
   }
 }

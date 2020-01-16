@@ -1,5 +1,7 @@
 <template>
   <v-footer
+    :app="$attrs.app"
+    :fixed="false"
     padless
   >
     <v-card
