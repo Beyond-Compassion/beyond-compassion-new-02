@@ -28,8 +28,8 @@
                   {{ body | sentenceCase }}<div />
                   <v-btn
                     :ripple="{ class: 'primaryLight--text' }"
-                    depressed
-                    large
+                    x-large
+                    tile
                     color="accentLightest"
                     class="greyDark--text cta mt-3"
                   >

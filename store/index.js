@@ -13,8 +13,6 @@ export const mutations = {
   },
 
   setStory (state, story) {
-    console.log('story')
-    console.log(story.content.quoteBanner[0])
     state.story = story
   }
 }
@@ -67,6 +65,13 @@ export const getters = {
     return pick(
       ['body'],
       state.story.content.ctaBanner[0]
+    )
+  },
+
+  missionSection (state) {
+    return pick(
+      ['items'],
+      state.story.content.missionSection[0]
     )
   }
 }
