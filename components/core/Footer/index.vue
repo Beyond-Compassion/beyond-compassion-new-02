@@ -1,13 +1,12 @@
 <template>
   <v-footer
-    dark
-    height="auto"
+    padless
   >
     <v-card
       flat
       tile
       color="greyDark"
-      class="white--text text-xs-center"
+      class="white--text text-center"
       width="100%"
     >
       <v-card-text>
