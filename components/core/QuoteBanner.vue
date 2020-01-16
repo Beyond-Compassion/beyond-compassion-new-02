@@ -1,33 +1,48 @@
 <template>
-  <div
-    :class="[dark ? 'alpha-testimonial--dark' : '']"
-    class="alpha-testimonial"
-  >
-    <div class="alpha-testimonial__content">
-      <v-icon
-        :dark="dark"
-        x-large
-        class="primary--text"
+  <v-container class="greyDark--text pt-5">
+    <v-layout
+      justify-center
+      align-center
+      wrap
+    >
+      <v-flex
+        :class="{'mb-12': true, 'mt-12': true, 'mr-4': $vuetify.breakpoint.xs}"
+        xs12
+        sm8
+        md6
       >
-        mdi-format-quote-open
-      </v-icon>
-      <p v-text="body" />
-    </div>
-    <footer>
-      <div
-        :class="[dark ? 'white' : 'primary']"
-        class="alpha-testimonial__footer-bar"
-      />
-      <div
-        v-text="author"
-        class="headline"
-      />
-      <div
-        v-text="title"
-        class="title"
-      />
-    </footer>
-  </div>
+        <div
+          :class="[dark ? 'alpha-testimonial--dark' : '']"
+          class="alpha-testimonial"
+        >
+          <div class="alpha-testimonial__content">
+            <v-icon
+              :dark="dark"
+              x-large
+              class="primary--text"
+            >
+              mdi-format-quote-open
+            </v-icon>
+            <p v-text="body" />
+          </div>
+          <footer>
+            <div
+              :class="[dark ? 'white' : 'primary']"
+              class="alpha-testimonial__footer-bar"
+            />
+            <div
+              v-text="author"
+              class="headline"
+            />
+            <div
+              v-text="title"
+              class="title"
+            />
+          </footer>
+        </div>
+      </v-flex>
+    </v-layout>
+  </v-container>
 </template>
 
 <script>

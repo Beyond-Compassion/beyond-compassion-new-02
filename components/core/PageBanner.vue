@@ -4,11 +4,10 @@
     <!-- gradient="to bottom, rgb(240, 180, 41, .9), rgba(24, 111, 175, .2) 40%" -->
     <!-- rgba(19, 66, 101, .55) 80% -->
     <v-img
-      v-if="namespace"
       :key="$route.path"
-      :src="heroImage"
       :height="$vuetify.breakpoint.mdAndDown ? '55vh' : '70vh'"
       :gradient="gradient"
+      :src="heroImage"
       position="bottom"
     >
       <v-fade-transition mode="out-in">
@@ -67,6 +66,8 @@ export default {
       return {
         'display-1': this.$vuetify.breakpoint.xs,
         'display-3': this.$vuetify.breakpoint.smAndUp,
+        'mb-2': this.$vuetify.breakpoint.xs,
+        'mb-5': this.$vuetify.breakpoint.smAndUp,
         'greyLightest--text': true,
         'font-weight-thin': true
       }
@@ -79,26 +80,7 @@ export default {
 
       // return 'to bottom, rgba(240, 244, 248, 1), 15%, rgba(33, 111, 171, .8) 40%, rgba(21, 65, 98, .8) 90%'
       return 'to bottom, rgba(240, 244, 248, 1), 30%, rgba(33, 111, 171, .8) 55%, rgba(21, 65, 98, .8) 90%'
-    },
-
-    isHome () {
-      return this.$route.path === '/'
-    },
-    namespace () {
-      return this.$route.name
     }
-    // title () {
-    //   return this.$t(`${this.namespace}.jumbotronTitle`)
-    // },
-    // subTitle () {
-    //   return this.$t(`${this.namespace}.jumbotronSubTitle`)
-    // },
-    // heroImage () {
-    //   return `/static/${this.namespace.toLowerCase()}-hero.jpg`
-    // }
-    // heroImage () {
-    //   return `/static/shoes-003-BW.png`
-    // }
   },
 
   mounted () {

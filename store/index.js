@@ -61,5 +61,12 @@ export const getters = {
       ['subTitle', 'title', 'heroImage'],
       state.story.content.pageBanner[0]
     )
+  },
+
+  ctaBanner (state) {
+    return pick(
+      ['body'],
+      state.story.content.ctaBanner[0]
+    )
   }
 }

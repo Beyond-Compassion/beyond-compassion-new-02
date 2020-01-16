@@ -8,6 +8,8 @@
       <nuxt />
     </v-content>
 
+    <!-- NOTE: adding "app" to this also adds the "fixed" prop with no easy way to
+    remove the associated class -->
     <core-footer
       v-bind="footer"
     />
