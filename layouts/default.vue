@@ -83,12 +83,13 @@
       </v-list>
     </v-navigation-drawer>
 
-    <v-footer
+    <core-footer v-bind="footer" />
+    <!-- <v-footer
       :fixed="fixed"
       app
     >
       <span>&copy; 2019</span>
-    </v-footer>
+    </v-footer> -->
   </v-app>
 </template>
 
@@ -96,8 +97,13 @@
 /* eslint-disable no-console */
 
 import { mapGetters } from 'vuex'
+import CoreFooter from '~/components/core/Footer'
 
 export default {
+  components: {
+    CoreFooter
+  },
+
   data () {
     return {
       clipped: false,

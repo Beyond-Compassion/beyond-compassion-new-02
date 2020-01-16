@@ -18,6 +18,8 @@ export const mutations = {
 export const actions = {
   // NOTE: nuxtServerInit must return a promise according to docs
   nuxtServerInit ({ dispatch }, context) {
+    console.log('context:')
+    console.log(context)
     return dispatch('fetchStory', context)
   },
 
