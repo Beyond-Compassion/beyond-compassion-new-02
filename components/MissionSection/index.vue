@@ -1,9 +1,10 @@
 <template>
   <v-container
     fill-height
-    class="greyDark--text"
+    class="greyDark--text py-12"
   >
     <v-layout
+      class="py-12"
       justify-center
       align-center
       wrap
@@ -12,7 +13,7 @@
       <v-flex
         id="mission-section"
         xs12
-        class="mt-5 pt-5 text-center"
+        class="text-center"
       >
         <span :class="titleClass">
           {{ 'Our Mission' | titleCase }}

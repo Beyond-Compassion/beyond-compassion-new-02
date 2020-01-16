@@ -1,8 +1,8 @@
 <template>
   <v-flex
-    xs12
+    xs10
     lg4
-    class="mt-3 mb-1"
+    class="mt-8 mb-1"
   >
     <v-layout
       row
@@ -38,10 +38,10 @@
         >
           <v-flex
             xs10
-            md7
             sm6
+            md7
           >
-            <p class="headline">
+            <p class="headline px-5">
               {{ title | titleCase }}
             </p>
             <p>
