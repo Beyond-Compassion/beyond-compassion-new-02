@@ -6,11 +6,12 @@
       wrap
     >
       <v-flex
-        :class="{'mb-12': true, 'mt-12': true, 'mr-4': $vuetify.breakpoint.xs}"
+        :class="{'mb-12': true, 'mt-12': true, 'mr-4': $breakpoint.xs}"
         xs12
         sm8
         md6
       >
+        <!-- <client-only> -->
         <div
           :class="[dark ? 'alpha-testimonial--dark' : '']"
           class="alpha-testimonial"
@@ -40,6 +41,7 @@
             />
           </footer>
         </div>
+        <!-- </client-only> -->
       </v-flex>
     </v-layout>
   </v-container>

@@ -4,38 +4,30 @@
     <!-- gradient="to bottom, rgb(240, 180, 41, .9), rgba(24, 111, 175, .2) 40%" -->
     <!-- rgba(19, 66, 101, .55) 80% -->
     <v-img
-      :key="$route.path"
-      :height="$vuetify.breakpoint.mdAndDown ? '55vh' : '70vh'"
       :gradient="gradient"
       :src="heroImage"
+      height="70vh"
       position="bottom"
     >
-      <v-fade-transition mode="out-in">
-        <v-container
-          v-if="isBooted"
-          :key="$route.path"
-          fill-height
-        >
-          <v-layout align-center>
-            <v-fade-transition mode="out-in">
-              <v-flex
-                :key="$route.path"
-                text-center
-              >
-                <h1
-                  :class="titleClass"
-                  v-html="$options.filters.titleCase(title)"
-                />
-                <div
-                  v-if="subTitle"
-                  v-html="$options.filters.titleCase(subTitle)"
-                  class="body greyLightest--text"
-                />
-              </v-flex>
-            </v-fade-transition>
-          </v-layout>
-        </v-container>
-      </v-fade-transition>
+      <v-container
+        fill-height
+      >
+        <v-layout align-center>
+          <v-flex
+            text-center
+          >
+            <h1
+              :class="titleClass"
+              v-html="$options.filters.titleCase(title)"
+            />
+            <div
+              v-if="subTitle"
+              v-html="$options.filters.titleCase(subTitle)"
+              class="body greyLightest--text"
+            />
+          </v-flex>
+        </v-layout>
+      </v-container>
     </v-img>
   </v-fade-transition>
 </template>
@@ -64,10 +56,10 @@ export default {
   computed: {
     titleClass () {
       return {
-        'display-1': this.$vuetify.breakpoint.xs,
-        'display-3': this.$vuetify.breakpoint.smAndUp,
-        'mb-2': this.$vuetify.breakpoint.xs,
-        'mb-5': this.$vuetify.breakpoint.smAndUp,
+        'display-2': this.$breakpoint.xs,
+        'display-3': this.$breakpoint.smAndUp,
+        'mb-2': this.$breakpoint.xs,
+        'mb-5': this.$breakpoint.smAndUp,
         'greyLightest--text': true,
         'font-weight-thin': true
       }
@@ -86,7 +78,7 @@ export default {
   mounted () {
     setTimeout(() => {
       this.isBooted = true
-    }, 200)
+    }, 0)
   }
 }
 </script>

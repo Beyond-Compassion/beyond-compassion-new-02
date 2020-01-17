@@ -28,7 +28,8 @@ export default {
   ** Plugins to load before mounting the App
   */
   plugins: [
-    '~plugins/filters'
+    '~plugins/filters',
+    '~plugins/breakpoint.js'
   ],
   /*
   ** Nuxt.js dev-modules
@@ -66,6 +67,10 @@ export default {
     treeShaking: true,
     customVariables: ['~/assets/variables.scss'],
     optionsPath: './vuetify.options.js',
+    font: {
+      family: 'Roboto'
+    },
+    // icons: 'mdi',
     theme: {
       dark: false,
       themes: {

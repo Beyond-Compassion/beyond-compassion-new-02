@@ -1,4 +1,8 @@
 <template>
+  <!-- <v-container
+    grid-list-xs
+    fill-height
+  > -->
   <v-container
     :grid-list-xs="$vuetify.breakpoint.smAndDown"
     :grid-list-xl="$vuetify.breakpoint.mdAndUp"
@@ -6,15 +10,15 @@
   >
     <v-btn
       v-if="$vuetify.breakpoint.xs"
-      :style="{top: '30%', left: '22px'}"
-      x-large
+      :style="{bottom: '330px', left: '22px'}"
       color="accentLightest"
       to="/donate"
       class="greyDark--text cta mt-3"
       absolute
       tile
+      small
     >
-      donate now
+      donate
     </v-btn>
 
     <v-layout

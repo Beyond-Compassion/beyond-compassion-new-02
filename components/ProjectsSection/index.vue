@@ -1,6 +1,6 @@
 <template>
   <core-carousel
-    :height="$vuetify.breakpoint.mdAndUp ? 800 : 800"
+    :height="800"
     :jumbotron="false"
     :items="allProjectPhotos"
     :delimiter-icon="$vuetify.icons.delimiter"
@@ -11,7 +11,9 @@
     class="mt-3"
     dark
   >
-    <project-body v-bind="pick(['title', 'body', 'past'], currentProject)" />
+    <client-only>
+      <project-body v-bind="pick(['title', 'body', 'past'], currentProject)" />
+    </client-only>
   </core-carousel>
 </template>
 

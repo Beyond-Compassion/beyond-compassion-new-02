@@ -5,7 +5,7 @@
     <!-- rgba(19, 66, 101, .55) 80% -->
     <v-img
       :key="$route.path"
-      :height="$vuetify.breakpoint.xs ? '150px' : '200px'"
+      :height="$breakpoint.xs ? '150px' : '200px'"
       :gradient="gradient"
       :src="backgroundImage"
       position="bottom"
@@ -65,8 +65,8 @@ export default {
 
   computed: {
     titleClass: () => ({
-      'display-1': this.$vuetify.breakpoint.xs,
-      'display-3': this.$vuetify.breakpoint.smAndUp,
+      'display-1': this.$breakpoint.xs,
+      'display-3': this.$breakpoint.smAndUp,
       'white--text': true,
       'font-weight-thin': true
     })
