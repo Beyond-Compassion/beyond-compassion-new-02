@@ -73,5 +73,12 @@ export const getters = {
       ['items'],
       state.story.content.missionSection[0]
     )
+  },
+
+  projectsSection (state) {
+    return pick(
+      ['items'],
+      state.story.content.projectsSection[0]
+    )
   }
 }

@@ -6,6 +6,7 @@
       v-bind="missionSection"
       :titleClass="titleClass"
     />
+    <projects-section v-bind="projectsSection" />
   </div>
 </template>
 
@@ -14,16 +15,18 @@ import { mapGetters } from 'vuex'
 import CoreQuoteBanner from '~/components/core/QuoteBanner'
 import CoreCtaBanner from '~/components/core/CtaBanner'
 import MissionSection from '~/components/MissionSection'
+import ProjectsSection from '~/components/ProjectsSection'
 
 export default {
   components: {
     CoreQuoteBanner,
     CoreCtaBanner,
-    MissionSection
+    MissionSection,
+    ProjectsSection
   },
 
   computed: {
-    ...mapGetters(['quoteBanner', 'ctaBanner', 'missionSection']),
+    ...mapGetters(['quoteBanner', 'ctaBanner', 'missionSection', 'projectsSection']),
 
     titleClass () {
       return {
