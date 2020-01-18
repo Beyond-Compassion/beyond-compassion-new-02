@@ -30,8 +30,8 @@ export default {
 
     titleClass () {
       return {
-        'display-2': this.$vuetify.breakpoint.xs,
-        'display-3': this.$vuetify.breakpoint.smAndUp,
+        'display-2': this.$breakpoint.xs,
+        'display-3': this.$breakpoint.smAndUp,
         'font-weight-thin': true
       }
     }
