@@ -67,10 +67,12 @@ export default {
     treeShaking: true,
     customVariables: ['~/assets/variables.scss'],
     optionsPath: './vuetify.options.js',
-    font: {
-      family: 'Roboto'
+    defaultAssets: {
+      font: {
+        family: 'Roboto'
+      },
+      icons: 'mdi'
     },
-    // icons: 'mdi',
     theme: {
       dark: false,
       themes: {
