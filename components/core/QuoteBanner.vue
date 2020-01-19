@@ -22,7 +22,7 @@
               x-large
               class="primary--text"
             >
-              mdi-format-quote-open
+              {{ mdiFormatQuoteOpen }}
             </v-icon>
             <p v-text="body" />
           </div>
@@ -48,7 +48,10 @@
 </template>
 
 <script>
+import { mdiFormatQuoteOpen } from '@mdi/js'
+
 export default {
+
   props: {
     author: {
       type: String,
@@ -62,6 +65,11 @@ export default {
     title: {
       type: String,
       default: ''
+    }
+  },
+  data () {
+    return {
+      mdiFormatQuoteOpen
     }
   }
 }
