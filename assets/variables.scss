@@ -2,3 +2,16 @@
 //
 // The variables you want to modify
 // $font-size-root: 20px;
+
+// $headings: (
+//   'h1': (
+//     'size': 3.3125rem,
+//     'line-height': 1.15em
+//   ),
+//   'h2': (
+//     'size': 2.25rem,
+//     'line-height': 1.5em
+//   )
+// );
+
+@import '~vuetify/src/styles/styles.sass';

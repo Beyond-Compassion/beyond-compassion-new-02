@@ -18,12 +18,13 @@
           >
             <h1
               :class="titleClass"
-              v-html="$options.filters.titleCase(title)"
-            />
+            >
+              {{ title | titleCase }}
+            </h1>
             <div
               v-if="subTitle"
               v-html="$options.filters.titleCase(subTitle)"
-              class="body greyLightest--text"
+              class="body white--text"
             />
           </v-flex>
         </v-layout>
@@ -60,8 +61,7 @@ export default {
         'display-3': this.$breakpoint.smAndUp,
         'mb-2': this.$breakpoint.xs,
         'mb-5': this.$breakpoint.smAndUp,
-        'greyLightest--text': true,
-        'font-weight-thin': true
+        'white--text': true
       }
     },
 
