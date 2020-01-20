@@ -16,7 +16,7 @@
         <p :class="titleClass">
           {{ 'Ways to Donate' }}
         </p>
-        <p class="mx-7" :style="{ lineHeight: '2.8rem' }">
+        <p :style="{ lineHeight: '2.8rem' }" class="mx-7">
           Click here to donate through our paypal:
           <v-btn
             :ripple="{ class: 'primaryLight--text' }"
@@ -33,19 +33,6 @@
             </v-icon>
           </v-btn>
         </p>
-        <!-- <p>
-          <v-btn
-            :ripple="{ class: 'primaryLight--text' }"
-            :loading="loading"
-            @click="loading = !loading"
-            large
-            color="accentLightest"
-            class="greyDark--text cta"
-            href="https://www.paypal.me/beyondcompassion"
-          >
-            <v-icon> {{ mdiPaypal }} </v-icon>
-          </v-btn>
-        </p> -->
       </v-flex>
     </v-layout>
   </v-container>
