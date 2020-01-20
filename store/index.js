@@ -1,10 +1,11 @@
 /* eslint-disable no-console */
-
 import { pick } from 'ramda'
+import { set, toggle } from '~/utils/vuex'
 
 export const state = () => ({
   counter: 0,
-  story: null
+  story: null,
+  drawer: null
 })
 
 export const mutations = {
@@ -12,9 +13,9 @@ export const mutations = {
     state.counter++
   },
 
-  setStory (state, story) {
-    state.story = story
-  }
+  setStory: set('story'),
+  setDrawer: set('drawer'),
+  toggleDrawer: toggle('drawer')
 }
 
 export const actions = {

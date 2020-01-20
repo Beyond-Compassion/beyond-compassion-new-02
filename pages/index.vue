@@ -3,10 +3,11 @@
     <core-quote-banner v-bind="quoteBanner" />
     <core-cta-banner v-bind="ctaBanner" />
     <mission-section
+      id="mission-section"
       v-bind="missionSection"
       :titleClass="titleClass"
     />
-    <projects-section v-bind="projectsSection" />
+    <projects-section id="projects-section" v-bind="projectsSection" />
   </div>
 </template>
 

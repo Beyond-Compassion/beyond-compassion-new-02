@@ -35,6 +35,7 @@
         class="button-class"
         active-class="primaryLight--text"
         text
+        nuxt
       >
         <span v-text="item.text" />
       </v-btn>
@@ -46,12 +47,13 @@
         depressed
         color="accentLightest cta"
         class="greyDark--text"
+        nuxt
       >
         <span>donate</span>
       </v-btn>
     </v-toolbar-items>
-    <!-- @click="toggleDrawer" -->
     <v-btn
+      @click="toggleDrawer"
       v-else
       icon
     >
@@ -63,8 +65,7 @@
 </template>
 
 <script>
-// Utilities
-// import { mapMutations } from 'vuex'
+import { mapMutations } from 'vuex'
 
 export default {
   data: () => ({
@@ -97,7 +98,7 @@ export default {
   },
 
   methods: {
-    // ...mapMutations(['toggleDrawer']),
+    ...mapMutations(['toggleDrawer']),
 
     onScroll () {
       this.isScrolling =

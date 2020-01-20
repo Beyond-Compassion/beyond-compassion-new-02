@@ -23,9 +23,10 @@
             </h1>
             <div
               v-if="subTitle"
-              v-html="$options.filters.titleCase(subTitle)"
               class="body white--text"
-            />
+            >
+              {{ subTitle | sentenceCase }}
+            </div>
           </v-flex>
         </v-layout>
       </v-container>

@@ -2,6 +2,8 @@
   <v-app>
     <core-app-bar />
 
+    <core-drawer />
+
     <core-page-banner v-bind="pageBanner" />
 
     <v-content class="pt-0">
@@ -22,12 +24,14 @@ import utilMixin from '~/mixins/util'
 import CoreFooter from '~/components/core/Footer'
 import CorePageBanner from '~/components/core/PageBanner'
 import CoreAppBar from '~/components/core/AppBar'
+import CoreDrawer from '~/components/core/Drawer'
 
 export default {
   components: {
     CoreFooter,
     CorePageBanner,
-    CoreAppBar
+    CoreAppBar,
+    CoreDrawer
   },
 
   mixins: [utilMixin],

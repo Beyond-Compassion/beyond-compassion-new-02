@@ -11,7 +11,6 @@
     >
       <!-- mission title -->
       <v-flex
-        id="mission-section"
         xs12
         class="text-center"
       >
