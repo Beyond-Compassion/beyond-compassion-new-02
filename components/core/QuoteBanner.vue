@@ -11,7 +11,6 @@
         sm8
         md6
       >
-        <!-- <client-only> -->
         <div
           :class="[dark ? 'alpha-testimonial--dark' : '']"
           class="alpha-testimonial"
@@ -41,7 +40,6 @@
             />
           </footer>
         </div>
-        <!-- </client-only> -->
       </v-flex>
     </v-layout>
   </v-container>

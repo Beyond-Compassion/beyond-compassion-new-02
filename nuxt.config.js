@@ -54,6 +54,12 @@ export default {
     }]
   ],
   /*
+  ** vue-router config
+  */
+  // router: {
+  //   scrollBehavior: require('~/app/router.scrollBehavior.js')
+  // },
+  /*
   ** Axios module configuration
   ** See https://axios.nuxtjs.org/options
   */

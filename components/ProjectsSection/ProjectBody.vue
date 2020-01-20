@@ -7,6 +7,7 @@
     :grid-list-xs="$vuetify.breakpoint.smAndDown"
     :grid-list-xl="$vuetify.breakpoint.mdAndUp"
     fill-height
+    class="pb-5"
   >
     <v-btn
       v-if="$vuetify.breakpoint.xs"
@@ -52,18 +53,10 @@
               /> -->
           </v-card-text>
           <v-card-actions v-if="!past">
-            <!-- <v-btn
-                flat
-                large
-                color="primaryLightest"
-                depressed
-              >
-                learn more
-              </v-btn> -->
             <v-spacer />
             <v-btn
               v-if="$vuetify.breakpoint.smAndUp"
-              large
+              x-large
               tile
               color="accentLightest"
               to="/donate"
@@ -72,14 +65,6 @@
               donate now
             </v-btn>
             <v-spacer />
-            <!-- <v-btn
-                color="accentLightest"
-                class="greyDark--text mr-2 cta"
-                :ripple="{ class: 'primaryLight--text' }"
-                depressed
-              >
-                donate now
-              </v-btn> -->
           </v-card-actions>
         </v-card>
       </v-flex>
