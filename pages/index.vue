@@ -1,13 +1,24 @@
 <template>
   <div>
-    <core-quote-banner v-bind="quoteBanner" />
-    <core-cta-banner v-bind="ctaBanner" />
+    <core-quote-banner
+      v-if="quoteBanner"
+      v-bind="quoteBanner"
+    />
+    <core-cta-banner
+      v-if="ctaBanner"
+      v-bind="ctaBanner"
+    />
     <mission-section
       id="mission-section"
+      v-if="missionSection"
       v-bind="missionSection"
       :titleClass="titleClass"
     />
-    <projects-section id="projects-section" v-bind="projectsSection" />
+    <projects-section
+      id="projects-section"
+      v-if="projectsSection"
+      v-bind="projectsSection"
+    />
   </div>
 </template>
 
@@ -27,7 +38,12 @@ export default {
   },
 
   computed: {
-    ...mapGetters(['quoteBanner', 'ctaBanner', 'missionSection', 'projectsSection']),
+    ...mapGetters([
+      'quoteBanner',
+      'ctaBanner',
+      'missionSection',
+      'projectsSection'
+    ]),
 
     titleClass () {
       return {
@@ -35,6 +51,10 @@ export default {
         'display-3': this.$breakpoint.smAndUp
       }
     }
+  },
+
+  fetch (context) {
+    return context.store.dispatch('fetchStory', context)
   }
 }
 </script>

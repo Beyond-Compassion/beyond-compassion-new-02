@@ -61,6 +61,10 @@ export default {
         'px-7': true
       }
     }
+  },
+
+  fetch (context) {
+    return context.store.dispatch('fetchStory', context)
   }
 }
 </script>
