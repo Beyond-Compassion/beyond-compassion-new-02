@@ -74,6 +74,10 @@ export default {
     customVariables: ['~/assets/variables.scss'],
     optionsPath: './vuetify.options.js'
   },
+  pageTransition: {
+    name: 'fade-transition',
+    css: true
+  },
   /*
   ** Build configuration
   */
@@ -82,6 +86,7 @@ export default {
     ** You can extend webpack config here
     */
     extend (config, ctx) {
-    }
+    },
+    devtools: true
   }
 }

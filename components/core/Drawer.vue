@@ -68,12 +68,12 @@ export default {
         },
         {
           'to': '/',
-          'hash': 'mission-section',
+          'hash': 'mission',
           'text': 'Mission'
         },
         {
           'to': '/',
-          'hash': 'projects-section',
+          'hash': 'projects',
           'text': 'Projects'
         },
         {

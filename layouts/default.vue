@@ -4,15 +4,13 @@
 
     <core-drawer />
 
-    <core-page-banner v-bind="pageBanner" />
-
     <v-content class="pt-0">
       <nuxt />
     </v-content>
 
     <!-- NOTE: adding "app" to this also adds the "fixed" prop with no easy way to
     remove the associated class -->
-    <core-footer v-bind="footer" />
+    <core-footer v-if="false" v-bind="footer" />
   </v-app>
 </template>
 
@@ -22,14 +20,12 @@
 import { mapGetters } from 'vuex'
 import utilMixin from '~/mixins/util'
 import CoreFooter from '~/components/core/Footer'
-import CorePageBanner from '~/components/core/PageBanner'
 import CoreAppBar from '~/components/core/AppBar'
 import CoreDrawer from '~/components/core/Drawer'
 
 export default {
   components: {
     CoreFooter,
-    CorePageBanner,
     CoreAppBar,
     CoreDrawer
   },
@@ -61,7 +57,7 @@ export default {
   },
 
   computed: {
-    ...mapGetters(['footer', 'pageBanner'])
+    ...mapGetters(['footer'])
   }
 }
 </script>

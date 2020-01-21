@@ -1,6 +1,6 @@
 /* eslint-disable no-console */
 import { pick } from 'ramda'
-import { set, toggle } from '~/utils/vuex'
+import { set, toggle, commitTimeout } from '~/utils/vuex'
 
 export const state = () => ({
   counter: 0,
@@ -38,7 +38,7 @@ export const actions = {
     return context.app.$storyapi.get(`cdn/stories/${routeName}?resolve_relations=global_reference.reference`, {
       version
     }).then((res) => {
-      commit('setStory', res.data.story)
+      commitTimeout(() => commit('setStory', res.data.story))
     }).catch((res) => {
       context.error({ statusCode: res.response.status, message: res.response.data })
     })

@@ -1,51 +1,62 @@
 <template>
-  <v-container
-    fill-height
-    class="greyDark--text"
-  >
-    <v-layout
-      justify-center
-      align-center
-      wrap
-      class="py-12"
+  <div>
+    <core-page-banner
+      v-if="pageBanner"
+      v-bind="pageBanner"
+    />
+
+    <v-container
+      fill-height
+      class="greyDark--text"
     >
-      <v-flex
-        xs12
-        class="text-center"
+      <v-layout
+        justify-center
+        align-center
+        wrap
+        class="py-12"
       >
-        <p :class="titleClass">
-          {{ 'Ways to Donate' }}
-        </p>
-        <p :style="{ lineHeight: '2.8rem' }" class="mx-7">
-          Click here to donate through our paypal:
-          <v-btn
-            :ripple="{ class: 'primaryLight--text' }"
-            :loading="loading"
-            @click="loading = !loading"
-            x-large
-            color="accentLightest"
-            class="greyDark--text cta ml-3"
-            href="https://www.paypal.me/beyondcompassion"
-            fab
+        <v-flex
+          xs12
+          class="text-center"
+        >
+          <p :class="titleClass">
+            {{ 'Ways to Donate' }}
+          </p>
+          <p
+            :style="{ lineHeight: '2.8rem' }"
+            class="mx-7"
           >
-            <v-icon large>
-              {{ mdiPaypal }}
-            </v-icon>
-          </v-btn>
-        </p>
-      </v-flex>
-    </v-layout>
-  </v-container>
+            Click here to donate through our paypal:
+            <v-btn
+              :ripple="{ class: 'primaryLight--text' }"
+              :loading="loading"
+              @click="loading = !loading"
+              x-large
+              color="accentLightest"
+              class="greyDark--text cta ml-3"
+              href="https://www.paypal.me/beyondcompassion"
+              fab
+            >
+              <v-icon large>
+                {{ mdiPaypal }}
+              </v-icon>
+            </v-btn>
+          </p>
+        </v-flex>
+      </v-layout>
+    </v-container>
+  </div>
 </template>
 
 <script>
 import { mdiPaypal } from '@mdi/js'
+import { mapGetters } from 'vuex'
+import CorePageBanner from '~/components/core/PageBanner'
 
 export default {
-  // metaInfo: {
-  //   title: 'Beyond Compassion',
-  //   meta: [{ name: 'description', content: 'A pretty cool NPO' }]
-  // },
+  components: {
+    CorePageBanner
+  },
 
   data: () => ({
     loading: false,
@@ -53,6 +64,8 @@ export default {
   }),
 
   computed: {
+    ...mapGetters(['pageBanner']),
+
     titleClass () {
       return {
         'display-2': this.$breakpoint.xs,

@@ -1,5 +1,9 @@
 <template>
   <div>
+    <core-page-banner
+      v-if="pageBanner"
+      v-bind="pageBanner"
+    />
     <core-quote-banner
       v-if="quoteBanner"
       v-bind="quoteBanner"
@@ -9,13 +13,13 @@
       v-bind="ctaBanner"
     />
     <mission-section
-      id="mission-section"
+      id="mission"
       v-if="missionSection"
       v-bind="missionSection"
       :titleClass="titleClass"
     />
     <projects-section
-      id="projects-section"
+      id="projects"
       v-if="projectsSection"
       v-bind="projectsSection"
     />
@@ -28,13 +32,15 @@ import CoreQuoteBanner from '~/components/core/QuoteBanner'
 import CoreCtaBanner from '~/components/core/CtaBanner'
 import MissionSection from '~/components/MissionSection'
 import ProjectsSection from '~/components/ProjectsSection'
+import CorePageBanner from '~/components/core/PageBanner'
 
 export default {
   components: {
     CoreQuoteBanner,
     CoreCtaBanner,
     MissionSection,
-    ProjectsSection
+    ProjectsSection,
+    CorePageBanner
   },
 
   computed: {
@@ -42,7 +48,8 @@ export default {
       'quoteBanner',
       'ctaBanner',
       'missionSection',
-      'projectsSection'
+      'projectsSection',
+      'pageBanner'
     ]),
 
     titleClass () {
@@ -52,6 +59,13 @@ export default {
       }
     }
   },
+
+  // transition: {
+  //   name: 'v-fade-transition',
+  //   mode: 'out-in'
+  // },
+
+  // transition: 'v-fade-transition',
 
   fetch (context) {
     return context.store.dispatch('fetchStory', context)
