@@ -10,7 +10,7 @@
 
     <!-- NOTE: adding "app" to this also adds the "fixed" prop with no easy way to
     remove the associated class -->
-    <core-footer v-if="false" v-bind="footer" />
+    <core-footer v-bind="footer" />
   </v-app>
 </template>
 
