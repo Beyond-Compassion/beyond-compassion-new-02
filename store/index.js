@@ -1,16 +1,20 @@
 /* eslint-disable no-console */
-import { pick } from 'ramda'
+import { pick, map } from 'ramda'
 import { set, toggle, commitTimeout } from '~/utils/vuex'
 
 export const state = () => ({
   story: null,
-  drawer: null
+  drawer: null,
+  imageDialog: false
+
 })
 
 export const mutations = {
   setStory: set('story'),
   setDrawer: set('drawer'),
-  toggleDrawer: toggle('drawer')
+  toggleDrawer: toggle('drawer'),
+  setImageDialog: set('imageDialog'),
+  toggleImageDialog: toggle('imageDialog')
 }
 
 export const actions = {
@@ -98,6 +102,17 @@ export const getters = {
       return pick(
         ['items'],
         state.story.content.projectsSection[0]
+      )
+    }
+
+    return null
+  },
+
+  eventMedia (state) {
+    if (state.story && state.story.content.eventMedia) {
+      return map(
+        pick(['eventName', 'file']),
+        state.story.content.eventMedia
       )
     }
 

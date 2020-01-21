@@ -23,13 +23,15 @@ export default {
   ** Global CSS
   */
   css: [
+    'plyr/dist/plyr.css'
   ],
   /*
   ** Plugins to load before mounting the App
   */
   plugins: [
     '~plugins/filters',
-    '~plugins/breakpoint.js'
+    '~plugins/breakpoint.js',
+    '~plugins/vue-plyr'
   ],
   /*
   ** Nuxt.js dev-modules
