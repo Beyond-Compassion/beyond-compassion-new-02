@@ -34,7 +34,7 @@ export default {
 
   head () {
     return {
-      title: this.meta.title,
+      title: this.$options.filters.titleCase(this.meta.title),
       meta: [
         {
           name: 'description',
