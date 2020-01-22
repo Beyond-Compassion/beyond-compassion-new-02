@@ -58,28 +58,13 @@ export default {
     CorePageBanner
   },
 
-  head () {
-    return {
-      title: this.meta.title,
-      meta: [
-        { name: 'description', hid: 'description', content: this.meta.description },
-        // Open Graph
-        { name: 'og:title', hid: 'og:title', content: this.meta.title },
-        { name: 'og:description', hid: 'og:description', content: this.meta.description },
-        { name: 'og:type', content: 'website' },
-        { name: 'og:url', content: 'https://bccharity.org' },
-        { name: 'og:image', content: this.meta.ogImage }
-      ]
-    }
-  },
-
   data: () => ({
     loading: false,
     mdiPaypal
   }),
 
   computed: {
-    ...mapGetters(['pageBanner', 'meta']),
+    ...mapGetters(['pageBanner']),
 
     titleClass () {
       return {

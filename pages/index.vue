@@ -43,29 +43,13 @@ export default {
     CorePageBanner
   },
 
-  head () {
-    return {
-      title: this.meta.title,
-      meta: [
-        { name: 'description', hid: 'description', content: this.meta.description },
-        // Open Graph
-        { name: 'og:title', hid: 'og:title', content: this.meta.title },
-        { name: 'og:description', hid: 'og:description', content: this.meta.description },
-        { name: 'og:type', content: 'website' },
-        { name: 'og:url', content: 'https://bccharity.org' },
-        { name: 'og:image', content: this.meta.ogImage }
-      ]
-    }
-  },
-
   computed: {
     ...mapGetters([
       'quoteBanner',
       'ctaBanner',
       'missionSection',
       'projectsSection',
-      'pageBanner',
-      'meta'
+      'pageBanner'
     ]),
 
     titleClass () {
@@ -75,13 +59,6 @@ export default {
       }
     }
   },
-
-  // transition: {
-  //   name: 'v-fade-transition',
-  //   mode: 'out-in'
-  // },
-
-  // transition: 'v-fade-transition',
 
   fetch (context) {
     return context.store.dispatch('fetchStory', context)
