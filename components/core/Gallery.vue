@@ -97,6 +97,7 @@ export default {
 
       return map(
         (mediaItem) => {
+          // MIKE: this needs to match other video extentions - not just mp4
           if (mediaItem.file.match(/\.[0-9a-z]+$/i)[0] === '.mp4') {
             return pipe(
               set(

@@ -15,15 +15,15 @@
           v-if="isVideo"
         >
           <video
-            :src="`/static/${video}`"
-            :style="{maxHeight: `${maxHeights[$breakpoint.name]}px`}"
+            :src="video"
+            :style="{maxHeight: `${maxHeights[$vuetify.breakpoint.name]}px`}"
           />
         </vue-plyr>
 
         <v-img
           v-else
-          :max-height="maxHeights[$breakpoint.name]"
-          :src="`/static/${currentImage}`"
+          :max-height="maxHeights[$vuetify.breakpoint.name]"
+          :src="currentImage"
           contain
         />
       </v-flex>
@@ -64,17 +64,13 @@ export default {
       return !isNilOrEmpty(this.video)
     },
 
-    currentImageExtension () {
-      return this.currentImage.split('.').pop()
-    },
-
     maxHeights () {
       return {
         xs: 500,
         sm: 500,
-        md: 900,
-        lg: 900,
-        xl: 900
+        md: 850,
+        lg: 850,
+        xl: 850
       }
     }
   },
@@ -82,7 +78,9 @@ export default {
   watch: {
     imageDialog (newVal) {
       if (!newVal) {
-        this.stopPlayer()
+        if (this.isVideo) {
+          this.stopPlayer()
+        }
       }
     }
   },
