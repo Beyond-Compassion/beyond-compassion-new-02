@@ -49,8 +49,8 @@ export default {
       meta: [
         { name: 'description', hid: 'description', content: this.meta.description },
         // Open Graph
-        { name: 'og:title', content: this.meta.title },
-        { name: 'og:description', content: this.meta.description },
+        { name: 'og:title', hid: 'og:title', content: this.meta.title },
+        { name: 'og:description', hid: 'og:description', content: this.meta.description },
         { name: 'og:type', content: 'website' },
         { name: 'og:url', content: 'https://bccharity.org' },
         { name: 'og:image', content: this.meta.ogImage }
