@@ -16,9 +16,9 @@
       style="min-height: 450px"
     >
       <transition-group
-        tag="v-layout"
+        tag="div"
         name="fade-transition"
-        class="wrap child-flex"
+        class="layout wrap child-flex"
       >
         <v-flex
           v-for="mediaItem in computedMediaItems"
@@ -67,6 +67,9 @@ import { map, lensProp, set, pipe } from 'ramda'
 import { mdiVideo, mdiCamera } from '@mdi/js'
 import { mapMutations } from 'vuex'
 
+const fileLens = lensProp('file')
+const videoLens = lensProp('video')
+
 export default {
   name: 'CoreGallery',
 
@@ -94,9 +97,6 @@ export default {
       const ret = !this.selectedCategory
         ? this.mediaItems
         : this.mediaItems.filter(p => p.categories.includes(this.selectedCategory))
-
-      const fileLens = lensProp('file')
-      const videoLens = lensProp('video')
 
       return map(
         (mediaItem) => {

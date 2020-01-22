@@ -43,6 +43,8 @@ import CoreGallery from '~/components/core/Gallery.vue'
 import CorePageBanner from '~/components/core/PageBanner'
 import CoreMediaDialog from '~/components/core/MediaDialog'
 
+const categoriesLens = lensProp('categories')
+
 export default {
   // metaInfo: {
   //   title: 'Gallery',
@@ -84,48 +86,10 @@ export default {
     },
 
     computedMediaItems () {
-      const categoriesLens = lensProp('categories')
-
       return map(
         set(categoriesLens, [1]),
         this.eventMedia
       )
-    },
-
-    projects () {
-      return [
-        {
-          name: 'event-2019-002',
-          img: 'event-2019-002.jpg',
-          categories: [1]
-        },
-        {
-          name: 'event-2019-003',
-          img: 'event-2019-003.jpg',
-          categories: [1]
-        },
-        {
-          name: 'event-2019-004',
-          img: 'event-2019-004.jpg',
-          categories: [1]
-        },
-        {
-          name: 'event-2019-005',
-          img: 'event-2019-005.jpg',
-          categories: [1]
-        },
-        {
-          name: 'event-2019-006',
-          img: 'event-2019-006.jpg',
-          categories: [1]
-        },
-        {
-          name: 'event-2019-001 video',
-          img: 'event-2019-001-thumbnail.jpg',
-          video: 'event-2019-001.mp4',
-          categories: [1]
-        }
-      ]
     }
   },
 
