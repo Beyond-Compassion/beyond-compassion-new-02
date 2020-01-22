@@ -59,7 +59,12 @@ export default {
         },
         { name: 'og:type', content: 'website' },
         { name: 'og:url', content: 'https://bccharity.org' },
-        { name: 'og:image', content: this.meta.ogImage }
+        { name: 'og:image', content: this.meta.ogImage },
+        {
+          name: 'apple-mobile-web-app-title',
+          hid: 'apple-mobile-web-app-title',
+          content: this.$options.filters.titleCase(this.meta.title)
+        }
       ]
     }
   },
