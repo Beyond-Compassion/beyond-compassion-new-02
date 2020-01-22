@@ -1,5 +1,6 @@
 /* eslint-disable no-console */
-import { pick, map } from 'ramda'
+import { pick, map, pipe } from 'ramda'
+import { renameKeys } from 'ramda-adjunct'
 import { set, toggle, commitTimeout } from '~/utils/vuex'
 
 export const state = () => ({
@@ -114,6 +115,17 @@ export const getters = {
         pick(['eventName', 'file']),
         state.story.content.eventMedia
       )
+    }
+
+    return null
+  },
+
+  meta (state) {
+    if (state.story && state.story.content.meta) {
+      return pipe(
+        pick(['title', 'description', 'og_image']),
+        renameKeys({ og_image: 'ogImage' })
+      )(state.story.content.meta)
     }
 
     return null

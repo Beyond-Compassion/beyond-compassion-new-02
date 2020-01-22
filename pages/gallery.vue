@@ -69,8 +69,23 @@ export default {
     }
   },
 
+  head () {
+    return {
+      title: this.meta.title,
+      meta: [
+        { name: 'description', hid: 'description', content: this.meta.description },
+        // Open Graph
+        { name: 'og:title', content: this.meta.title },
+        { name: 'og:description', content: this.meta.description },
+        { name: 'og:type', content: 'website' },
+        { name: 'og:url', content: 'https://bccharity.org' },
+        { name: 'og:image', content: this.meta.ogImage }
+      ]
+    }
+  },
+
   computed: {
-    ...mapGetters(['pageBanner', 'eventMedia']),
+    ...mapGetters(['pageBanner', 'eventMedia', 'meta']),
 
     categories () {
       return [
