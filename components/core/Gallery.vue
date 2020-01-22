@@ -52,7 +52,7 @@
                 x-large
                 color="primaryDark"
               >
-                {{ mediaItem.video ? 'mdi-video' : 'mdi-camera' }}
+                {{ mediaItem.video ? mdiVideo : mdiCamera }}
               </v-icon>
             </v-layout>
           </v-img>
@@ -64,6 +64,7 @@
 
 <script>
 import { map, lensProp, set, pipe } from 'ramda'
+import { mdiVideo, mdiCamera } from '@mdi/js'
 import { mapMutations } from 'vuex'
 
 export default {
@@ -82,7 +83,9 @@ export default {
 
   data () {
     return {
-      selectedCategory: null
+      selectedCategory: null,
+      mdiVideo,
+      mdiCamera
     }
   },
 
