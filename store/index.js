@@ -7,7 +7,6 @@ export const state = () => ({
   story: null,
   drawer: null,
   imageDialog: false
-
 })
 
 export const mutations = {

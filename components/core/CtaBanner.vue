@@ -32,8 +32,9 @@
                     tile
                     color="accentLightest"
                     class="greyDark--text cta mt-3"
+                    to="/donate"
+                    nuxt
                   >
-                    <!-- to="/donate" -->
                     {{ buttonText }}
                   </v-btn>
                 </div>
