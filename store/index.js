@@ -31,7 +31,7 @@ export const actions = {
     const routeName = context.app.router.app.context.route.name
 
     // load the JSON from the API
-    return context.app.$storyapi.get(`cdn/stories/${routeName}?resolve_relations=global_reference.reference`, {
+    return context.app.$storyapi.get(`cdn/stories/pages/${routeName}/?resolve_relations=global_reference.reference`, {
       version
     }).then((res) => {
       commitTimeout(() => commit('setStory', res.data.story))
