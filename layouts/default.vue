@@ -71,6 +71,13 @@ export default {
 
   computed: {
     ...mapGetters(['footer', 'meta'])
+  },
+
+  mounted () {
+    this.$storybridge.on(['input', 'published', 'change'], (event) => {
+      // window.location.reload()
+      this.$nuxt.refresh()
+    })
   }
 }
 </script>
